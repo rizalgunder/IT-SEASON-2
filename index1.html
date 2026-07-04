@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DutssRunning — Sepatu Running Terbaik</title>
+  <meta name="description" content="DutssRunning menjual sepatu lari original untuk road, trail, racing, dan daily use dengan harga terjangkau."/>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Analytics (dummy, ganti ID saat live — lihat catatan di script.js & README.md) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="logo">DUTSS<span style="color:#fff">RUNNING</span></div>
+    <nav id="main-nav">
+      <a href="#home">Home</a>
+      <a href="#produk">Produk</a>
+      <a href="keranjang.html">Keranjang</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="keranjang.html" class="cart-btn">🛒<span id="cart-count">0</span></a>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+    </div>
+  </div>
+</header>
+<div class="lane-divider"></div>
+
+<section class="hero" id="home">
+  <h1>LARI TANPA <span>BATAS</span></h1>
+  <p>Temukan sepatu running terbaik untuk road, trail, hingga race day — original, nyaman, dan siap menemani setiap kilometer larimu.</p>
+  <a href="#produk" class="btn-primary">Belanja Sekarang</a>
+</section>
+
+<section id="produk">
+  <div class="container">
+    <div class="section-title"><h2>Produk Unggulan</h2></div>
+    <p class="section-sub">10 pilihan sepatu running dari berbagai kategori</p>
+
+    <div class="filter-bar">
+      <input type="text" id="search-input" placeholder="Cari sepatu...">
+      <button class="chip active" onclick="setCategory('all', this)">Semua</button>
+      <button class="chip" onclick="setCategory('road', this)">Road</button>
+      <button class="chip" onclick="setCategory('trail', this)">Trail</button>
+      <button class="chip" onclick="setCategory('racing', this)">Racing</button>
+      <button class="chip" onclick="setCategory('daily', this)">Daily</button>
+    </div>
+
+    <div class="produk-grid" id="produk-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.instagram.com/dutssrunning_offical?igsh=NzM5NTQ0cGh4b2Fr">Dutss Running</a>
+  <p>Jl. Raya Laswi No.820, Kab. Bandung, Jawa Barat</p>
+  <p>| Telp: 0838-2128-4553</p>
+  <p>&copy; 2026 DutssRunning. All rights reserved.</p>
+  <a href="keranjang.html" class="admin-link">Lihat Keranjang</a> &nbsp;|&nbsp;
+  <a href="admin.html" class="admin-link">Login Admin</a>
+</footer>
+
+<!-- Modal Detail Produk -->
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal-box" id="detail-body"></div>
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
