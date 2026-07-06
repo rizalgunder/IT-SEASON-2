@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keranjang — DutssRunning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="logo">DUTSS<span style="color:#fff">RUNNING</span></div>
+    <nav id="main-nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#produk">Produk</a>
+      <a href="keranjang.html">Keranjang</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="keranjang.html" class="cart-btn">🛒<span id="cart-count">0</span></a>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+    </div>
+  </div>
+</header>
+<div class="lane-divider"></div>
+
+<section id="keranjang" style="padding-top:50px">
+  <div class="container">
+    <div class="section-title"><h2>Keranjang Belanja</h2></div>
+    <p class="section-sub">Cek kembali pesananmu sebelum checkout</p>
+    <div class="cart-wrap">
+      <div>
+        <div id="cart-list"></div>
+        <a href="index.html#produk" class="btn-outline empty-cart-cta" style="display:inline-block;padding:10px 20px;border-radius:8px;background:#fff">← Lanjut Belanja</a>
+      </div>
+      <div class="cart-summary">
+        <div style="font-size:14px;color:#9FADC6">Total Belanja</div>
+        <div class="total" id="cart-total">Rp 0</div>
+        <button class="btn-primary" onclick="openCheckout()">Checkout</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.instagram.com/dutssrunning_offical?igsh=NzM5NTQ0cGh4b2Fr">Dutss Running</a>
+  <p>Jl. Raya Laswi No.820, Kab. Bandung, Jawa Barat</p>
+  <p>Email: naufalrizaloval@gmail.com | Telp: 0838-2128-4553</p>
+  <p>&copy; 2026 DutssRunning. All rights reserved.</p>
+  <a href="admin.html" class="admin-link">Login Admin</a>
+</footer>
+
+<div class="modal-overlay" id="checkout-modal">
+  <div class="modal-box" id="checkout-body">
+    <button class="modal-close" onclick="closeModal('checkout-modal')">&times;</button>
+    <h3>Checkout</h3>
+    <p class="kategori-tag" style="margin-bottom:6px">Total: <b id="checkout-total">Rp 0</b></p>
+    <form id="checkout-form">
+      <label>Nama Lengkap</label>
+      <input type="text" id="ck-nama" required>
+      <label>Alamat Pengiriman</label>
+      <textarea id="ck-alamat" rows="2" required></textarea>
+      <label>Nomor HP</label>
+      <input type="text" id="ck-hp" placeholder="08xxxxxxxxxx" required>
+      <label>Metode Pembayaran</label>
+      <select id="ck-metode">
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="Gopay">Gopay</option>
+        <option value="OVO">OVO</option>
+        <option value="Dana">Dana</option>
+        <option value="COD">COD (Bayar di Tempat)</option>
+      </select>
+      <div class="error-msg" id="ck-error"></div>
+      <button type="submit" class="btn-primary" style="width:100%;margin-top:18px;border-radius:8px">Bayar Sekarang</button>
+    </form>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
